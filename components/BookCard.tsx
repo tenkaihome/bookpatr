@@ -38,7 +38,9 @@ export default function BookCard({ id, title, author, price, category, image }: 
         </h3>
         <div className="flex justify-between items-center">
           <p className="font-manrope text-sm text-charcoal/50">{author}</p>
-          <p className="font-manrope text-sm font-bold text-charcoal">{price}</p>
+          <p className="font-manrope text-sm font-bold text-charcoal">
+            {price.startsWith('$') ? price : `$${price}`}
+          </p>
         </div>
       </div>
     </Link>

@@ -19,7 +19,8 @@ export default function CheckoutPage() {
         return { ...book, quantity: item.quantity };
       }).filter(item => item.title);
 
-      const response = await fetch('http://localhost:5000/api/checkout/create-checkout-session', {
+      const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://logbook-kohl-one.vercel.app/api';
+      const response = await fetch(`${API_BASE_URL}/checkout/create-checkout-session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: itemsForStripe }),

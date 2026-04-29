@@ -36,10 +36,10 @@ export default function Footer() {
         <div>
           <h4 className="font-newsreader text-xl mb-6">Support</h4>
           <ul className="space-y-4 text-paper-beige/60 font-manrope text-sm">
-            <li><Link href="/contact" className="hover:text-coral transition-colors">Contact Us</Link></li>
-            <li><Link href="/shipping" className="hover:text-coral transition-colors">Shipping Info</Link></li>
-            <li><Link href="/returns" className="hover:text-coral transition-colors">Return Policy</Link></li>
-            <li><Link href="/faq" className="hover:text-coral transition-colors">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-coral transition-colors">Contact Us</Link></li>
+            <li><Link href="#" className="hover:text-coral transition-colors">Shipping Info</Link></li>
+            <li><Link href="#" className="hover:text-coral transition-colors">Return Policy</Link></li>
+            <li><Link href="#" className="hover:text-coral transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
