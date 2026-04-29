@@ -50,7 +50,7 @@ export default function CartPage() {
                       <div className="flex justify-between items-start mb-2">
                         <h3 className="font-newsreader text-2xl text-charcoal">{item.title}</h3>
                         <span className="font-manrope font-bold text-charcoal">
-                          {item.price.startsWith('$') ? item.price : `$${item.price}`}
+                          {item.price && item.price.startsWith('$') ? item.price : `$${item.price || '0.00'}`}
                         </span>
                       </div>
                       <p className="font-manrope text-sm text-charcoal/40 mb-4">{item.author}</p>
