@@ -30,6 +30,7 @@ export default function Footer() {
             <li><Link href="/genres" className="hover:text-coral transition-colors">Browse Genres</Link></li>
             <li><Link href="/authors" className="hover:text-coral transition-colors">Our Authors</Link></li>
             <li><Link href="/journals" className="hover:text-coral transition-colors">Literary Journal</Link></li>
+            <li><Link href="/about" className="hover:text-coral transition-colors">About Us</Link></li>
           </ul>
         </div>
 
