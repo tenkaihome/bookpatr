@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useCart } from "@/lib/CartContext";
+import { Plus } from "lucide-react";
 
 interface BookCardProps {
   id: string;
@@ -10,6 +14,14 @@ interface BookCardProps {
 }
 
 export default function BookCard({ id, title, author, price, category, image }: BookCardProps) {
+  const { addToCart } = useCart();
+
+  const handleQuickAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    addToCart(id, 1);
+  };
+
   return (
     <Link href={`/products/${id}`} className="group cursor-pointer block">
       <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-charcoal/5 rounded-sm shadow-tactile group-hover:shadow-ambient transition-all duration-500 group-hover:-translate-y-2">
@@ -24,7 +36,18 @@ export default function BookCard({ id, title, author, price, category, image }: 
             {title}
           </div>
         )}
-        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 transition-colors duration-500"></div>
+        
+        {/* Hover Overlay with Quick Add Button */}
+        <div className="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+          <button 
+            onClick={handleQuickAdd}
+            className="bg-paper-beige text-charcoal px-6 py-3 rounded-full font-manrope font-bold text-[10px] uppercase tracking-[0.2em] shadow-ambient transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 hover:bg-coral hover:text-white flex items-center gap-2"
+          >
+            <Plus className="w-3 h-3" />
+            Add Cart
+          </button>
+        </div>
+
         <div className="absolute top-4 left-4">
           <span className="bg-paper-beige/90 backdrop-blur-sm text-charcoal px-3 py-1 text-[10px] font-manrope font-bold uppercase tracking-widest rounded-full shadow-sm">
             {category}
