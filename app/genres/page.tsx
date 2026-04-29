@@ -45,7 +45,13 @@ export default async function GenresPage() {
               {books.slice(0, 3).map((book) => (
                 <Link key={book.id} href={`/products/${book.id}`} className="flex space-x-6 group">
                   <div className="w-20 aspect-[3/4] bg-charcoal/5 flex-shrink-0 rounded-sm overflow-hidden shadow-sm group-hover:shadow-ambient transition-all">
-                    <img src={book.cover_url} alt={book.title} className="w-full h-full object-cover" />
+                    {book.cover_url ? (
+                      <img src={book.cover_url} alt={book.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-charcoal/10 text-charcoal/30 text-[8px] font-newsreader italic text-center p-1">
+                        {book.title}
+                      </div>
+                    )}
                   </div>
                   <div>
                     <h3 className="font-newsreader text-lg text-charcoal group-hover:text-coral transition-colors">{book.title}</h3>

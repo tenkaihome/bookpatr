@@ -38,7 +38,13 @@ export default function CartPage() {
                 {fullCartItems.map((item) => (
                   <div key={item.id} className="flex space-x-8 pb-8 border-b border-charcoal/10 items-center">
                     <div className="w-24 aspect-[3/4] bg-charcoal/5 rounded-sm overflow-hidden flex-shrink-0">
-                      <img src={item.cover_url} alt={item.title} className="object-cover w-full h-full" />
+                      {item.cover_url ? (
+                        <img src={item.cover_url} alt={item.title} className="object-cover w-full h-full" />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-charcoal/10 text-charcoal/30 text-[10px] font-newsreader italic text-center p-2">
+                          {item.title}
+                        </div>
+                      )}
                     </div>
                     <div className="flex-grow">
                       <div className="flex justify-between items-start mb-2">

@@ -28,11 +28,17 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
             <div className="relative aspect-[3/4] bg-charcoal/5 rounded-sm overflow-hidden shadow-ambient">
-              <img
-                src={book.cover_url}
-                alt={book.title}
-                className="object-cover w-full h-full"
-              />
+              {book.cover_url ? (
+                <img
+                  src={book.cover_url}
+                  alt={book.title}
+                  className="object-cover w-full h-full"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-charcoal/10 text-charcoal/20 font-newsreader text-4xl italic px-8 text-center">
+                  {book.title}
+                </div>
+              )}
             </div>
 
             <div className="space-y-12">
