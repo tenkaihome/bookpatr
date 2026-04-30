@@ -58,9 +58,6 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 <span className="text-3xl font-manrope font-bold text-charcoal">
                   {book.price.startsWith('$') ? book.price : `$${book.price}`}
                 </span>
-                <span className="bg-charcoal/5 px-4 py-1 text-[10px] font-manrope font-bold uppercase tracking-widest rounded-full text-charcoal/60">
-                  In Stock
-                </span>
               </div>
 
               <p className="text-lg font-manrope text-charcoal/70 leading-relaxed max-w-lg">
